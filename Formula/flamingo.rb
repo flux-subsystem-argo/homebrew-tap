@@ -5,12 +5,12 @@
 class Flamingo < Formula
   desc "Flamingo CLI"
   homepage "https://flux-subsystem-argo.github.io/website/"
-  version "0.6.1"
+  version "0.7.0"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/flux-subsystem-argo/flamingo/releases/download/v0.6.1/flamingo_0.6.1_darwin_amd64.tar.gz"
-      sha256 "99b9e22739c58283dad0e7d142b13eede06b0b22eed017632e1ccb79b622bc0f"
+    if Hardware::CPU.arm?
+      url "https://github.com/flux-subsystem-argo/flamingo/releases/download/v0.7.0/flamingo_0.7.0_darwin_arm64.tar.gz"
+      sha256 "ac2dea8f53ddcb90c59447cad384976fede97a7eb00d0e385af1489cc1c76833"
 
       def install
         bin.install "flamingo"
@@ -18,9 +18,9 @@ class Flamingo < Formula
         generate_completions_from_executable(bin/"flamingo", "completion")
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/flux-subsystem-argo/flamingo/releases/download/v0.6.1/flamingo_0.6.1_darwin_arm64.tar.gz"
-      sha256 "82ee8cf986977356e7a504a625a95f25ad863f222e2c6c6c2c671fb198aff2fe"
+    if Hardware::CPU.intel?
+      url "https://github.com/flux-subsystem-argo/flamingo/releases/download/v0.7.0/flamingo_0.7.0_darwin_amd64.tar.gz"
+      sha256 "dde430395580d8640f19496b9725abcfea2db0e66153c04d108d65e245f21cdc"
 
       def install
         bin.install "flamingo"
@@ -32,8 +32,8 @@ class Flamingo < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/flux-subsystem-argo/flamingo/releases/download/v0.6.1/flamingo_0.6.1_linux_arm64.tar.gz"
-      sha256 "dc3792cb5f6f4117d20915b8dd3fb7dab56170c534a2c0f25435cba8860229a1"
+      url "https://github.com/flux-subsystem-argo/flamingo/releases/download/v0.7.0/flamingo_0.7.0_linux_arm64.tar.gz"
+      sha256 "b95920832ec8b74c4138c14f45b142613d73d539e8afed2cb8ce66e5b87d1005"
 
       def install
         bin.install "flamingo"
@@ -42,8 +42,8 @@ class Flamingo < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/flux-subsystem-argo/flamingo/releases/download/v0.6.1/flamingo_0.6.1_linux_amd64.tar.gz"
-      sha256 "6b976c6902f34e24572075eedf700da19f9752e5ffed7398825b3ed105b7f238"
+      url "https://github.com/flux-subsystem-argo/flamingo/releases/download/v0.7.0/flamingo_0.7.0_linux_amd64.tar.gz"
+      sha256 "cec641e2419b040d440216c2b99f256786a1c2d9d8a3050f75425bc1b685e0d4"
 
       def install
         bin.install "flamingo"
